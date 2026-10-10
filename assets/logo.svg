@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#0f0f0f" stroke="#00d4ff" stroke-width="3"/>
+  
+  <!-- C++ symbol -->
+  <text x="100" y="75" font-size="60" font-weight="bold" fill="#00d4ff" text-anchor="middle" font-family="Arial">C++</text>
+  
+  <!-- LARA text -->
+  <text x="100" y="130" font-size="28" font-weight="bold" fill="#00d4ff" text-anchor="middle" font-family="Arial">LARA</text>
+  
+  <!-- Accent lines -->
+  <line x1="50" y1="150" x2="150" y2="150" stroke="#00d4ff" stroke-width="2"/>
+  <circle cx="100" cy="100" r="100" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+</svg>

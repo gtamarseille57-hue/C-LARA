@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++LARA - Blood Strike Weapon Modifier</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lgl-theme.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="assets/logo.svg" alt="Logo" class="logo">
+                <span class="brand-name">C++LARA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#weapons" class="nav-link">Weapons</a></li>
+                <li><a href="#presets" class="nav-link">Presets</a></li>
+                <li><a href="#settings" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">C++LARA</h1>
+                    <p class="hero-subtitle">Blood Strike Weapon Skin Modifier</p>
+                    <p class="hero-description">Unleash Your Arsenal - Customize every aspect of your weapons</p>
+                    <button class="btn btn-primary btn-large" onclick="startModifier()">Launch Modifier</button>
+                </div>
+                <div class="hero-visual">
+                    <div class="weapon-preview">🔫</div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features" id="features">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Skin Selection</h3>
+                        <p>Access all weapon skins with instant preview</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Customization</h3>
+                        <p>Modify barrels, optics, stocks, and more</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Performance</h3>
+                        <p>Optimized interface for smooth experience</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Save Loadouts</h3>
+                        <p>Create and manage your weapon presets</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Live Stats</h3>
+                        <p>Real-time weapon stat calculations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌙</div>
+                        <h3>Dark Theme</h3>
+                        <p>Premium dark interface design</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weapons Section -->
+            <section class="weapons-section" id="weapons">
+                <h2>Weapons</h2>
+                <div class="weapons-grid" id="weaponsGrid">
+                    <!-- Weapons will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Modifier Section -->
+            <section class="modifier-section" id="modifier">
+                <div class="modifier-container">
+                    <!-- Left Panel: Weapon List -->
+                    <div class="panel left-panel">
+                        <h3>🔫 WEAPONS</h3>
+                        <div class="weapon-list" id="weaponList">
+                            <!-- Weapons loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Middle Panel: Customization -->
+                    <div class="panel middle-panel">
+                        <h3>🎨 CUSTOMIZATION</h3>
+                        
+                        <!-- Tabs -->
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="barrel">🔫 Barrel</button>
+                            <button class="tab-btn" data-tab="optic">🔍 Optic</button>
+                            <button class="tab-btn" data-tab="stock">📦 Stock</button>
+                            <button class="tab-btn" data-tab="muzzle">💨 Muzzle</button>
+                        </div>
+
+                        <!-- Tab Contents -->
+                        <div class="tab-content active" id="barrel">
+                            <select class="select-input">
+                                <option>Select Barrel...</option>
+                                <option>Standard Barrel</option>
+                                <option>Long Barrel</option>
+                                <option>Short Barrel</option>
+                                <option>Tactical Barrel</option>
+                            </select>
+                        </div>
+                        <div class="tab-content" id="optic">
+                            <select class="select-input">
+                                <option>Select Optic...</option>
+                                <option>2x Scope</option>
+                                <option>4x Scope</option>
+                                <option>Red Dot</option>
+                                <option>Holo Sight</option>
+                            </select>
+                        </div>
+                        <div class="tab-content" id="stock">
+                            <select class="select-input">
+                                <option>Select Stock...</option>
+                                <option>Standard Stock</option>
+                                <option>Tactical Stock</option>
+                                <option>Combat Stock</option>
+                                <option>Lightweight Stock</option>
+                            </select>
+                        </div>
+                        <div class="tab-content" id="muzzle">
+                            <select class="select-input">
+                                <option>Select Muzzle...</option>
+                                <option>Suppressor</option>
+                                <option>Compensator</option>
+                                <option>Flash Hider</option>
+                                <option>Muzzle Brake</option>
+                            </select>
+                        </div>
+
+                        <!-- Skin Selection -->
+                        <h4>🎨 Skins</h4>
+                        <div class="skin-selector" id="skinSelector">
+                            <!-- Skins loaded here -->
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="applyLoadout()">✅ APPLY</button>
+                            <button class="btn btn-secondary" onclick="saveLoadout()">💾 SAVE</button>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel: Preview & Stats -->
+                    <div class="panel right-panel">
+                        <h3>👁️ PREVIEW</h3>
+                        <div class="weapon-preview-box">
+                            <div class="preview-placeholder">3D Preview</div>
+                        </div>
+
+                        <h4>📊 STATS</h4>
+                        <div class="stats-display">
+                            <div class="stat-item">
+                                <span class="stat-label">Damage:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 85%"></div>
+                                </div>
+                                <span class="stat-value">85</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Fire Rate:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 75%"></div>
+                                </div>
+                                <span class="stat-value">75</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Accuracy:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 92%"></div>
+                                </div>
+                                <span class="stat-value">92</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Recoil:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 68%"></div>
+                                </div>
+                                <span class="stat-value">68</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Mobility:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 88%"></div>
+                                </div>
+                                <span class="stat-value">88</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Magazine:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 80%"></div>
+                                </div>
+                                <span class="stat-value">30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Presets Section -->
+            <section class="presets-section" id="presets">
+                <h2>Saved Presets</h2>
+                <div class="presets-grid" id="presetsGrid">
+                    <div class="preset-card">
+                        <div class="preset-name">Aggressive Setup</div>
+                        <div class="preset-weapon">M416</div>
+                        <button class="btn btn-small" onclick="loadPreset(1)">Load</button>
+                    </div>
+                    <div class="preset-card">
+                        <div class="preset-name">Stealth Build</div>
+                        <div class="preset-weapon">MP5</div>
+                        <button class="btn btn-small" onclick="loadPreset(2)">Load</button>
+                    </div>
+                    <div class="preset-card">
+                        <div class="preset-name">Sniper Configuration</div>
+                        <div class="preset-weapon">AWM</div>
+                        <button class="btn btn-small" onclick="loadPreset(3)">Load</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 C++LARA - Blood Strike Weapon Modifier | All Rights Reserved</p>
+            <p>Developed by gtamarseille57-hue | <a href="https://github.com/gtamarseille57-hue/C-LARA">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/weapons-data.js"></script>
+</body>
+</html>
